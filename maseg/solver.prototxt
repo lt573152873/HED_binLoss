@@ -1,0 +1,19 @@
+net: "hed_he.prototxt"
+test_initialization:false
+test_iter: 0
+test_interval: 1000000
+display: 1000
+# lr for fine-tuning should be lower than when starting from scratch
+base_lr: 1e-8
+lr_policy: "step"
+gamma: 0.1
+# stepsize should also be lower, as we're closer to being done
+stepsize: 15000
+momentum: 0.90
+weight_decay: 0.0005
+# snapshot caffemodel solverstate
+snapshot: 1000
+snapshot_prefix: "hed_isbi_he"
+# uncomment the following to default to CPU mode solving
+solver_mode: GPU 
+max_iter: 20000
